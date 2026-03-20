@@ -12,10 +12,10 @@ const NODES = [
   { id: 6, x: 500, y: 300, label: "G" },
 ];
 
-const EDGES = [[0,1],[0,2],[1,3],[1,4],[2,5],[2,6],[4,5]];
+const EDGES: [number, number][] = [[0,1],[0,2],[1,3],[1,4],[2,5],[2,6],[4,5]];
 
 const ADJ: number[][] = NODES.map(() => []);
-EDGES.forEach(([a, b]: [number, number]) => { ADJ[a].push(b); ADJ[b].push(a); });
+EDGES.forEach(([a, b]) => { ADJ[a].push(b); ADJ[b].push(a); });
 
 export default function GraphVisualizer() {
   const [algo, setAlgo] = useState("bfs");
